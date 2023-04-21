@@ -224,6 +224,7 @@ button {
     .song-info {
       gap: 2rem;
       align-items: center;
+      width: 300px;
 
       .number {
         font-size: 1.125rem;
@@ -246,8 +247,13 @@ button {
         display: flex;
         flex-grow: 2;
         justify-content: space-evenly;
+
         p {
           font-size: 0.75rem;
+        }
+
+        .artists {
+          width: 250px;
         }
       }
     }

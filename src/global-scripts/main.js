@@ -68,7 +68,7 @@ const createPlaylist = async function () {
               </div>
             </div>
             <div class="more-info flex display-none">
-              <div>
+              <div class="artists">
                 <p>Artists</p>
                 <h4 class="artist">${dataArr[item].track.artists
                   .map((artist) => artist.name)
