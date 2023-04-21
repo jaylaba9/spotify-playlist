@@ -1,0 +1,272 @@
+/* ------------ COLORS ------------ */
+/* ------------ CSS RESET ------------ */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ------------ GENERAL STYLING ------------ */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+#home-page {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 3rem;
+}
+
+h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+p {
+  color: #bfbfbf;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  padding: 0;
+}
+
+/* ------------ UTILITY CLASSES ------------ */
+.flex {
+  display: flex;
+}
+
+.display-none {
+  display: none;
+}
+
+/* ------------ REUSABLES ------------ */
+/* ------------ NAVBAR ------------ */
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.25rem 0 1.25rem 1rem;
+}
+.navbar .btn-back,
+.navbar .btn-forward {
+  cursor: not-allowed;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+}
+.navbar .btn-profile {
+  align-items: center;
+  gap: 0.75rem;
+  margin-right: 3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50px;
+}
+.navbar .btn-profile h4 {
+  margin-right: 2rem;
+}
+@media screen and (min-width: 64em) {
+  .navbar .btn-forward {
+    display: inline-block;
+  }
+  .navbar .btn-profile {
+    display: flex;
+  }
+}
+
+/* ------------ HEADER ------------ */
+.header {
+  align-items: flex-end;
+  width: 100%;
+  min-height: 60%;
+  background-image: url(../../public/images/header-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.header .header__content {
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 0 0 2rem 2rem;
+}
+
+@media screen and (min-width: 48em) {
+  .header {
+    min-height: 40%;
+    background-image: url(../../public/images/header-tablet2.jpg);
+  }
+}
+@media screen and (min-width: 64em) {
+  .header {
+    min-height: 50%;
+    background-image: url(../../public/images/header-desktop.jpg);
+  }
+}
+/* ------------ PLAYLIST ------------ */
+.playlist {
+  width: 100%;
+  flex-direction: column;
+  background-color: #000000;
+}
+.playlist .playlist__nav {
+  margin: 1.5rem 0 1.5rem 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+.playlist .playlist__content {
+  flex-direction: column;
+}
+.playlist .song-card {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #18181c;
+  border-radius: 1rem;
+}
+.playlist .song-card .song-info {
+  gap: 2rem;
+  align-items: center;
+}
+.playlist .song-card .song-info .number {
+  font-size: 1.125rem;
+}
+.playlist .song-card .song-info .details .album-name {
+  font-size: 0.75rem;
+}
+.playlist .song-card .actions {
+  align-items: center;
+  gap: 1.125rem;
+}
+@media screen and (min-width: 48em) {
+  .playlist .song-card .more-info {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-evenly;
+  }
+  .playlist .song-card .more-info p {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .playlist .song-card .more-info .time-info {
+    display: block;
+  }
+  .playlist .song-card .heart {
+    display: inline-block;
+    align-self: center;
+    width: 24px;
+  }
+}
+
+/* ------------ BOTTOM NAV ------------ */
+@media screen and (min-width: 48em) and (max-width: 63.99em) {
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 1.25rem 0;
+    justify-content: center;
+    align-items: center;
+    gap: 6.5rem;
+    background-color: #000000;
+  }
+  .bottom-nav a {
+    flex-direction: column;
+    gap: 0.625rem;
+    text-decoration: none;
+    color: #bfbfbf;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .bottom-nav a img {
+    align-self: center;
+  }
+  .bottom-nav a.active {
+    color: #ffffff;
+  }
+}/*# sourceMappingURL=style.css.map */
