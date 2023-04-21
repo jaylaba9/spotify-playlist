@@ -193,6 +193,18 @@ button {
   .header {
     min-height: 50%;
     background-image: url(../../public/images/header-desktop.jpg);
+
+    .header__content {
+      h4,
+      p {
+        font-size: 1.125rem;
+      }
+
+      h1 {
+        font-size: 4.25rem;
+        line-height: 4.25rem;
+      }
+    }
   }
 }
 

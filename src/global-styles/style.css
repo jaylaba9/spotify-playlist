@@ -184,6 +184,14 @@ button {
     min-height: 50%;
     background-image: url(../../public/images/header-desktop.jpg);
   }
+  .header .header__content h4,
+  .header .header__content p {
+    font-size: 1.125rem;
+  }
+  .header .header__content h1 {
+    font-size: 4.25rem;
+    line-height: 4.25rem;
+  }
 }
 /* ------------ PLAYLIST ------------ */
 .playlist {
