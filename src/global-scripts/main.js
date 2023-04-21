@@ -1,7 +1,9 @@
 'use strict';
 
-const CLIENT_ID = 'c1403ffbfd4948a38e7f00b3f1e126ef';
-const CLIENT_SECRET = 'c287e31a3ee34d3dbea25f359c7d1576';
+import keys from './apikey.js';
+
+const CLIENT_ID = keys['CLIENT_ID'];
+const CLIENT_SECRET = keys['CLIENT_SECRET'];
 
 const playlist = document.querySelector('.playlist__content');
 
