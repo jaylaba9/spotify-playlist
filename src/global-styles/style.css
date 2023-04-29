@@ -74,6 +74,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  background-color: #000000;
 }
 
 #home-page {
@@ -137,7 +138,25 @@ button {
   border: none;
   border-radius: 50%;
 }
+.navbar .available-playlists {
+  margin-right: 0.5rem;
+  gap: 0.5rem;
+}
+.navbar .available-playlists .btn-choose {
+  color: #bfbfbf;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem;
+  border-radius: 50px;
+}
+.navbar .available-playlists .btn-choose.active {
+  outline: 1px solid #bfbfbf;
+  color: #ffffff;
+}
+.navbar .available-playlists .btn-choose:hover {
+  outline: 1px solid #bfbfbf;
+}
 .navbar .btn-profile {
+  cursor: pointer;
   align-items: center;
   gap: 0.75rem;
   margin-right: 3rem;

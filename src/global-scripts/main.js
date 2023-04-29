@@ -6,6 +6,9 @@ const CLIENT_ID = keys['CLIENT_ID'];
 const CLIENT_SECRET = keys['CLIENT_SECRET'];
 
 const playlist = document.querySelector('.playlist__content');
+const btnChooseArr = Array.from(document.querySelectorAll('.btn-choose'));
+
+let URL = 'https://api.spotify.com/v1/playlists/37i9dQZEVXbNG2KDcFcKOF/tracks';
 
 const authorize = async function () {
   let result = await fetch('https://accounts.spotify.com/api/token', {
@@ -26,18 +29,15 @@ const authorize = async function () {
   return result.access_token;
 };
 
-const fetchData = async function () {
+const fetchData = async function (url = URL) {
   const token = await authorize();
 
-  let result = await fetch(
-    'https://api.spotify.com/v1/playlists/37i9dQZEVXbNG2KDcFcKOF/tracks',
-    {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  let result = await fetch(url, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   result = await result.json();
   // console.log(result);
@@ -53,10 +53,9 @@ const convertDuration = function (milis) {
     : minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 };
 
-const createPlaylist = async function () {
-  const data = await fetchData();
+const createPlaylist = async function (url = URL) {
+  const data = await fetchData(url);
   const dataArr = data['items'];
-  console.log(dataArr);
 
   for (let item = 0; item < dataArr.length; item++) {
     playlist.innerHTML += `
@@ -100,3 +99,21 @@ const createPlaylist = async function () {
 };
 
 createPlaylist();
+
+btnChooseArr.forEach((btn) =>
+  btn.addEventListener('click', async (e) => {
+    // do these only if the clicked element is not active
+    if (!e.target.classList.contains('active')) {
+      // remove active class from each element
+      for (const el of btnChooseArr) {
+        el.classList.remove('active');
+      }
+      // add active class on target element
+      e.target.classList.add('active');
+
+      // render new playlist
+      playlist.innerHTML = '';
+      await createPlaylist(e.target.dataset.url);
+    }
+  })
+);
