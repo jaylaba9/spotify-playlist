@@ -7,7 +7,7 @@ It's design is fully responsive, what was achieved by using flexbox and media qu
 
 Application is using Spotify Web API to retrieve data of displayed songs. API requests were made with a use of Fetch API.
 
-Preview is available at https://statuesque-starburst-19ffac.netlify.app/
+Preview is available at https://jaylaba9-playlist.netlify.app
 
 Technologies used:
 - HTML
